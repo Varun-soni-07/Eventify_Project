@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="eventify">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eventify — Register</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.js"></script>
+
+    <script>
+        tailwind.config = { plugins:[daisyui], daisyui:{themes:['eventify']} };
+        document.documentElement.setAttribute('data-theme','eventify');
+    </script>
+</head>
+
+<body class="bg-base-200 min-h-screen flex items-center justify-center">
+
+<div class="card w-full max-w-md bg-base-100 shadow-lg p-6">
+    <h2 class="text-2xl font-semibold mb-4">Create your account</h2>
+
+    <label class="form-control mb-3">
+        <span class="label-text">Username</span>
+        <input id="regUser" class="input input-bordered" placeholder="Enter username">
+    </label>
+<br>
+    <label class="form-control mb-4">
+        <span class="label-text">Password</span>
+        <input id="regPass" type="password" class="input input-bordered" placeholder="Enter password">
+    </label>
+
+    <button id="registerBtn" class="btn btn-primary w-full">Register</button>
+
+    <p class="text-sm text-base-content/70 mt-3" id="regMsg"></p>
+
+    <p class="mt-4 text-center text-base-content/60">
+        Already have an account?
+        <a href="login.html" class="link link-primary">Login</a>
+    </p>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="eventify">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eventify — Home</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.js"></script>
+    <script>
+        tailwind.config = {
+          theme: { extend: { colors: { primary: '#1e3a8a', accent: '#4f46e5' } } },
+          plugins: [daisyui],
+          daisyui: { themes: ['eventify'] }
+        };
+        document.documentElement.setAttribute('data-theme','eventify');
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-base-200 min-h-screen" data-page="home">
+
+<!-- Navbar -->
+<nav class="navbar bg-base-100 shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="btn btn-ghost normal-case text-xl">Eventify</a>
+            <a href="events.html" class="btn btn-ghost">Events</a>
+            <a href="myevents.html" class="btn btn-ghost">My Events</a>
+            <a href="admin.html" class="btn btn-ghost">Admin</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" class="btn btn-ghost btn-sm" title="Toggle theme">🌓</button>
+            <div id="authArea" class="flex items-center gap-2"></div>
+        </div>
+    </div>
+
+</nav>
+
+<!-- Hero -->
+<header class="py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h1 class="text-4xl font-bold text-primary mb-4">Host great events. Fill seats. Grow community.</h1>
+                <p class="text-base-content/70 mb-6">Eventify — simple event creation, registrations and user management backed by your Spring Boot API.</p>
+                <div class="flex gap-3">
+                    <a href="events.html" class="btn btn-primary">Browse Events</a>
+                    <a href="admin.html" class="btn btn-outline">Go to Admin</a>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-6 shadow-inner">
+                <ul class="space-y-3">
+                    <li class="flex gap-3 items-start">
+                        <div class="badge badge-primary badge-lg">1</div>
+                        <div>
+                            <div class="font-semibold">Create Events</div>
+                            <div class="text-sm text-base-content/70">Admins can create and manage events.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <div class="badge badge-primary badge-lg">2</div>
+                        <div>
+                            <div class="font-semibold">Register</div>
+                            <div class="text-sm text-base-content/70">Users register for events after signing in.</div>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <div class="badge badge-primary badge-lg">3</div>
+                        <div>
+                            <div class="font-semibold">Track</div>
+                            <div class="text-sm text-base-content/70">Users view their registrations in My Events.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 pb-12">
+    <h2 class="text-2xl font-semibold mb-4">Upcoming Events</h2>
+    <div id="upcoming" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+</main>
+
+<footer class="border-t bg-base-100">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <span class="text-sm">© <span id="year"></span> Eventify</span>
+        <div class="text-sm text-base-content/60">Built with ❤️ · Corporate Soft Blue</div>
+    </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

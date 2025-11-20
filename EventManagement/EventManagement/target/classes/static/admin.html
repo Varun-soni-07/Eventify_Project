@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-theme="eventify">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eventify — Admin</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.js"></script>
+    <script> tailwind.config = { plugins:[daisyui], daisyui:{themes:['eventify']} }; document.documentElement.setAttribute('data-theme','eventify'); </script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-base-200" data-page="admin">
+
+<!-- Navbar -->
+<nav class="navbar bg-base-100 shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="btn btn-ghost normal-case text-xl">Eventify</a>
+            <a href="events.html" class="btn btn-ghost">Events</a>
+            <a href="myevents.html" class="btn btn-ghost">My Events</a>
+            <a href="admin.html" class="btn btn-ghost btn-active">Admin</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" class="btn btn-ghost btn-sm">🌓</button>
+            <div id="authArea" class="flex items-center gap-2"></div>
+        </div>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="card bg-base-100 p-6 shadow">
+            <h2 class="text-xl font-semibold mb-3">Create Event</h2>
+            <div class="space-y-3">
+                <input id="ev_title" placeholder="Title" class="input input-bordered w-full" />
+                <textarea id="ev_desc" placeholder="Description" class="textarea textarea-bordered w-full"></textarea>
+                <input id="ev_date" type="date" class="input input-bordered w-full" />
+                <input id="ev_loc" placeholder="Location" class="input input-bordered w-full" />
+                <input id="ev_seats" type="number" placeholder="Seats" class="input input-bordered w-full" />
+                <div class="flex gap-2">
+                    <button id="btnCreate" class="btn btn-primary">Create Event</button>
+                    <button id="btnClear" class="btn btn-ghost">Clear</button>
+                </div>
+                <p id="adminMsg" class="text-sm text-base-content/70 mt-2"></p>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-3">All Events</h2>
+            <div id="adminList" class="space-y-3"></div>
+        </div>
+    </div>
+</main>
+
+<footer class="border-t bg-base-100">
+    <div class="container mx-auto px-4 py-4">
+        <span class="text-sm">© <span id="year4"></span> Eventify</span>
+    </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

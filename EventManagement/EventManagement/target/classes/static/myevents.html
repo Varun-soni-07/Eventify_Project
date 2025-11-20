@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="eventify">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eventify — My Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.js"></script>
+    <script> tailwind.config = { plugins:[daisyui], daisyui:{themes:['eventify']} }; document.documentElement.setAttribute('data-theme','eventify');</script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-base-200" data-page="myevents">
+
+<!-- Navbar -->
+<nav class="navbar bg-base-100 shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="btn btn-ghost normal-case text-xl">Eventify</a>
+            <a href="events.html" class="btn btn-ghost">Events</a>
+            <a href="myevents.html" class="btn btn-ghost btn-active">My Events</a>
+            <a href="admin.html" class="btn btn-ghost">Admin</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" class="btn btn-ghost btn-sm">🌓</button>
+            <div id="authArea" class="flex items-center gap-2"></div>
+        </div>
+    </div>
+</nav>
+
+<main class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-semibold mb-4">My Registered Events</h1>
+    <div id="myEventsArea" class="space-y-4"></div>
+</main>
+
+<footer class="border-t bg-base-100">
+    <div class="container mx-auto px-4 py-4">
+        <span class="text-sm">© <span id="year3"></span> Eventify</span>
+    </div>
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

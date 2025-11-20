@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-theme="eventify">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eventify — Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.js"></script>
+    <script> tailwind.config = { plugins:[daisyui], daisyui:{themes:['eventify']} }; document.documentElement.setAttribute('data-theme','eventify'); </script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-base-200 min-h-screen flex items-center justify-center">
+
+<div class="card w-full max-w-md shadow p-6">
+    <h2 class="text-2xl font-semibold mb-4">Sign in</h2>
+
+    <div class="form-control mb-3">
+        <label class="label"><span class="label-text">Username</span></label>
+        <input id="loginUsername" type="text" class="input input-bordered" placeholder="username" />
+    </div>
+
+    <div class="form-control mb-4">
+        <label class="label"><span class="label-text">Password</span></label>
+        <input id="loginPassword" type="password" class="input input-bordered" placeholder="password" />
+    </div>
+
+    <div class="flex gap-2">
+        <button id="doLogin" class="btn btn-primary">Sign in</button>
+        <a href="index.html" class="btn btn-ghost">Cancel</a>
+    </div>
+
+    <p id="loginMsg" class="text-sm text-base-content/70 mt-3"></p>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
